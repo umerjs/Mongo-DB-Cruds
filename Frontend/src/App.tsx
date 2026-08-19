@@ -1,6 +1,7 @@
 import Form from "./components/Form";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { BACKEND_URL } from "./core";
 
 interface Post {
   _id: number;
