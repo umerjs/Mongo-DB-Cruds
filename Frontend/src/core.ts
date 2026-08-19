@@ -1,4 +1,4 @@
-const configuredBackendUrl = import.meta.env.VITE_BACKEND_URL;
+const configuredBackendUrl = import.meta.env.VITE_BACKEND_URL?.trim();
 
-export const BACKEND_URL = configuredBackendUrl;
+export const BACKEND_URL = (configuredBackendUrl || "http://localhost:2002").replace(/\/$/, "");
 export const FRONTEND_URL = import.meta.env.VITE_FRONTEND_URL || window.location.origin;
