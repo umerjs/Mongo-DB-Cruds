@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: process.env.SITE_URL || "http://localhost:3003",
+    origin: ${FrontendUrl} || "http://localhost:3003",
     methods: "*",
   }),
 );
