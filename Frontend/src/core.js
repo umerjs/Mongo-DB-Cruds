@@ -1,2 +1,2 @@
-export const BackendUrl = process.env.BACKENDURL
-export const FrontendUrl = process.env.FRONTENDURL
+export const BACKEND_URL = process.env.BACKEND_URL
+export const FRONTEND_URL = process.env.FRONTEND_URL

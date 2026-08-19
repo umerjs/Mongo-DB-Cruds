@@ -1,6 +1,6 @@
 import { useRef, type FormEvent } from "react";
 import axios from "axios";
-import BackendUrl from "..core.js"
+import BACKEND_URL from "..core.js"
 
 interface FormProps {
   getallposts: () => void;
@@ -23,7 +23,7 @@ const Form = ({ getallposts }: FormProps) => {
     }
 
     try {
-      const response = await axios.post(`${BackendUrl}/api/v1/post`, {
+      const response = await axios.post(`${BACKEND_URL}/api/v1/post`, {
         title,
         description,
       });

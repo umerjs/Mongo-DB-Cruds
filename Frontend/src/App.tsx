@@ -17,7 +17,7 @@ const App = () => {
 
   const getallposts = async () => {
     try {
-      const response = await axios.get(`${BackendUrl}/api/v1/post/`);
+      const response = await axios.get(`${BACKEND_URL}/api/v1/post/`);
       const postsData = response.data?.data ?? [];
 
       setPosts(postsData);
@@ -34,7 +34,7 @@ const App = () => {
     }
 
     try {
-      await axios.delete(`${BackendUrl}/api/v1/post/${id}`);
+      await axios.delete(`${BACKEND_URL}/api/v1/post/${id}`);
 
       alert("Post deleted successfully");
       getallposts();
@@ -62,7 +62,7 @@ const App = () => {
     }
 
     try {
-      await axios.put(`${BackendUrl}/api/v1/post/${id}`, {
+      await axios.put(`${BACKEND_URL}/api/v1/post/${id}`, {
         title: UpdatedTitle,
         description: Updateddescription,
       });
