@@ -1,4 +1,5 @@
 import Form from "./components/Form";
+import { BACKEND_URL } from "./core";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -11,10 +12,6 @@ interface Post {
 const App = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
-  useEffect(() => {
-    getallposts();
-  }, []);
-
   const getallposts = async () => {
     try {
       const response = await axios.get(`${BACKEND_URL}/api/v1/post/`);
@@ -26,6 +23,10 @@ const App = () => {
       console.error("Error fetching posts:", error);
     }
   };
+
+  useEffect(() => {
+    void Promise.resolve().then(getallposts);
+  }, []);
 
   const delete_post = async (id: number) => {
     if (!id) {

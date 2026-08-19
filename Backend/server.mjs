@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 2002;
 
 // Read allowed origin from env (dotenv already loaded above)
-const allowedOrigin = process.env.FRONTENDURL || "http://localhost:3003";
+const allowedOrigin = process.env.FRONTEND_URL || process.env.FRONTENDURL || "http://localhost:3003";
 
 app.use(express.json());
 
