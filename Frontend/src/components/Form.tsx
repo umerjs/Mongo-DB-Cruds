@@ -1,6 +1,6 @@
 import { useRef, type FormEvent } from "react";
 import axios from "axios";
-import { BACKEND_URL } from "../core.js"
+import { BACKEND_URL } from "../core"
 
 interface FormProps {
   getallposts: () => void;
