@@ -5,16 +5,14 @@ import { connect_db } from "./libs/mongodb.mjs";
 import { postRoutes } from "./routes/index.mjs";
 
 const app = express();
-const port = process.env.PORT ||;
-
-// Read allowed origin from env (dotenv already loaded above)
-const allowedOrigin = process.env.VITE_FRONTEND_URL || "http://localhost:3003" || "https://mongo-db-cruds-frn.vercel.app/" ;
+const port = process.env.PORT;
 
 app.use(express.json());
 
 app.use(
   cors({
-    origin: allowedOrigin,
+    origin: process.env.VITE_FRONTEND_URL || "http://localhost:3003" || "https://mongo-db-cruds-frn.vercel.app/" ;
+,
     methods: "*",
   }),
 );
