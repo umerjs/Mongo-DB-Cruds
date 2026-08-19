@@ -7,11 +7,14 @@ import { postRoutes } from "./routes/index.mjs";
 const app = express();
 const port = process.env.PORT || 2002;
 
+// Read allowed origin from env (dotenv already loaded above)
+const allowedOrigin = process.env.FRONTENDURL || "http://localhost:3003";
+
 app.use(express.json());
 
 app.use(
   cors({
-    origin: ${FRONTEND_URL} || "http://localhost:3003",
+    origin: allowedOrigin,
     methods: "*",
   }),
 );
