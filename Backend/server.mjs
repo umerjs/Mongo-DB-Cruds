@@ -5,7 +5,7 @@ import { connect_db } from "./libs/mongodb.mjs";
 import { postRoutes } from "./routes/index.mjs";
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.BACKEND_URL;
 
 app.use(express.json());
 
